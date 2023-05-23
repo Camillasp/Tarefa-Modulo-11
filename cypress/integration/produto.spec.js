@@ -10,9 +10,6 @@ describe('Funcionalidade Página de produtos', () => {
 
     it('Deve selecionarum produto da lista', () => {
         cy.get('[class="product-block grid"]')
-            //.first()
-            //.last()
-            //.eq(3)
             .contains('Ariel Roll Sleeve Sweatshirt')
             .clik()
     });
@@ -32,7 +29,15 @@ describe('Funcionalidade Página de produtos', () => {
         
     });
 
+    it('Deve adicionar produtos ao carrinho, com comando customizado', () => {
+        
+        cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'M', 'Black', 3)
+    });
 
+    it('Deve adicionar produtos ao carrinho, com comando customizado', () => {
 
+        cy.addProdutos('Ariel Roll Sleeve Sweatshirt', 'XS', 'Red', 1)
+        
+    });
 
 });
